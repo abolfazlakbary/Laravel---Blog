@@ -1,0 +1,7 @@
+1 - first: npm run dev
+
+2 - second: php artisan serve
+
+3 - enjoy :)
+
+AA

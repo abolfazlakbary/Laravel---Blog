@@ -6,15 +6,11 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ReplyController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function()
     {
-        Route::get('/home', [HomeController::class, 'index'])->name('home');
+        Route::get('/', [HomeController::class, 'index'])->name('home');
 
         Route::resource('posts', PostController::class);
 
