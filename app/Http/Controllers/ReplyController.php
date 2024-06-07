@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\Comment;
+use App\Models\Comment;
 use App\Http\Requests\StoreReplyRequest;
 
 class ReplyController extends Controller
@@ -13,7 +13,7 @@ class ReplyController extends Controller
         $comment->replies()->create(
             [
                 'user_id' => auth()->id(),
-                'body' => $request->body
+                'body' => $request->new_reply
             ]
         );
 

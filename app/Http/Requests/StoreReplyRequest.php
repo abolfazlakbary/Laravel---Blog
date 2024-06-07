@@ -22,7 +22,7 @@ class StoreReplyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'body' => 'required|min:1|max:255'
+            'new_reply' => 'required|min:1|max:255'
         ];
     }
 }
