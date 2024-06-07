@@ -10,12 +10,10 @@ class ReplyController extends Controller
 {
     public function store(StoreReplyRequest $request, Comment $comment)
     {
-        $validated = $request->validate();
-
         $comment->replies()->create(
             [
                 'user_id' => auth()->id(),
-                'body' => $validated->body
+                'body' => $request->body
             ]
         );
 
