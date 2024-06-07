@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('replies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('comment_id');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('comment_id')->constrained();
             $table->text('body');
             $table->timestamps();
         });
