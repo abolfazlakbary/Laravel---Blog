@@ -3,12 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
 use App\Models\User;
 
 class Reply extends Model
 {
     use HasFactory;
+
+    protected $connection = 'mongodb';
 
     protected $fillable = ['user_id', 'comment_id', 'body'];
 
